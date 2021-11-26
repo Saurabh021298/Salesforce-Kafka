@@ -1,7 +1,7 @@
 ﻿
 
 Sales-force Streaming Events and Kafka Integration
-![](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.001.png)
+![](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.001.png)
 
 
 # **Document History**
@@ -74,7 +74,7 @@ To Achieve this, application capitalizing salesforce event bus mechanism to capt
 
 ![Diagram
 
-Description automatically generated](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.002.png)
+Description automatically generated](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.002.png)
 
 # **Solution Design/Approach**
 
@@ -95,7 +95,7 @@ Following steps to be executed across platforms
 
 \-   Click on **“New connected App”**
 
-![Create new connected app](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.003.png)
+![Create new connected app](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.003.png)
 
 
 
@@ -106,7 +106,7 @@ Following steps to be executed across platforms
 
 - **Contact Email.** your email.
 
-![New connected app form](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.004.png)
+![New connected app form](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.004.png)
 
 - Go to **API (Enable OAuth Settings)** and select Enable OAuth Settings.
 
@@ -117,7 +117,7 @@ Following steps to be executed across platforms
 
 - Click the **Save** button to save the new Connected App.
 
-![Selected OAuth Scopes](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.005.png)
+![Selected OAuth Scopes](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.005.png)
 
 
 
@@ -127,7 +127,7 @@ Following steps to be executed across platforms
 - On the new app that you just created, click **Manage**
 
 
-![Manage connected app](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.006.png)
+![Manage connected app](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.006.png)
 
 \-     On the page that opens, click the Edit Policies button.
 
@@ -135,13 +135,13 @@ Following steps to be executed across platforms
 
 \-    Set **Permitted Users** to: All users may self-authorize
 
-![Manage Salesforce connected app](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.007.png)
+![Manage Salesforce connected app](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.007.png)
 ##
 - ## Acquire Consumer Key and Secret Key:
 
 - Go to the **API (Enable OAuth Settings)** section, and note down the **Consumer Key** and **Consumer Secret**.
 
-![Consumer and secret key](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.008.png)
+![Consumer and secret key](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.008.png)
 
 - Get Your Consumer Key and Client Secrete and Save it in Notepad.
 ##
@@ -150,14 +150,14 @@ Following steps to be executed across platforms
 
 https://**<YOUR\_INSTANCE>**.salesforce.com/services/oauth2/authorize?response\_type=code&client\_id=**<CONSUMER\_KEY>**&redirect\_uri=https://login.salesforce.com/
 
-![](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.009.png)
+![](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.009.png)
 
 - Enter request Url in the browser
 - Allow access if any alert popup. Then you will see browser is redirecting to a Url like this. You can obtain the code using that Url.
 
 [https://login.salesforce.com/?code=**aPrxYXyxzkuBzbDGdwv67qekAQredtrsWqty38LsdhfREyTRbvdjvTqdbvxPVC__4Cb9xGKDGErtOw%3D%3D**](https://login.salesforce.com/?code=aPrxYXyxzkuBzbj78FV67qekAQpAHyzh9Ry38LsyinKxPVC__Wzov6j6OBFx74Cb9xGKI60AOw%3D%3D)
 
-![](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.010.png)
+![](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.010.png)
 
 \-  The browser will redirect to a Url with the code
 
@@ -182,7 +182,7 @@ curl -X POST [https://**<YOUR_INSTANCE>**.salesforce.com/services/oauth2/token?c
 
 - If you are not familiar with curl you can use Postman to send the request.
 
-![](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.011.png)
+![](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.011.png)
 
 
 
@@ -194,22 +194,22 @@ curl -X POST [https://**<YOUR_INSTANCE>**.salesforce.com/services/oauth2/token?c
 - So, select the object which changed data event you want.
 - In Our case We are selecting Users.
 
-![](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.012.png)
+![](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.012.png)
 - ## Enable Salesforce for PushTopic:
 
 - The pushTopic record contains a SOQL query. Event notifications are generated for updates that match the query. Alternatively, you can also use Workbench to create a PushTopic. In this sample we using Salesforce Developer Console to create a Push Topic.
 
 - **Login** to the **Salesforce Account**. Navigate to the top right corner of the **Home page** and click the **Setup** icon. Then select **Developer Console**.
 
-![Open the Developer Console.](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.013.png)
+![Open the Developer Console.](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.013.png)
 
 - After populating the Developer console, click **Debug** -> Open **Execute Anonymous Window**.
 
-![Open the Anonymous Window.](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.014.png)
+![Open the Anonymous Window.](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.014.png)
 
 - Add the following entry in the **Enter Apex Code** window and click **Execute**.
 
-![Enter Apex code.](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.015.png)
+![Enter Apex code.](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.015.png)
 
 PushTopic pushTopic = **new** PushTopic();
 
@@ -257,7 +257,7 @@ Step 1. Install Python and Required Libraries:
 - Consider this process in Windows
 - Firstly, install python 3.7 and install all required libraries which mentioned in the starting of this document.
 
-![](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.016.png)
+![](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.016.png)
 
 Step 2. Install git hub and git bash in your system.
 
@@ -270,7 +270,7 @@ Step 3. Install Kafka
 - Move that tar file into C drive and Unzip into it.
 - Since it’s based on JVM languages like Scala and Java, you must make sure that you are using Java 7 or greater.
 
-![](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.017.png)
+![](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.017.png)
 
 After installing kafka Follow these steps to start kafka server:
 - ## Start Gitbash
@@ -279,9 +279,9 @@ After installing kafka Follow these steps to start kafka server:
 - Minimise First git bash and again follow the first step to open one more git bash.
 - Note: check previous git bash and cmd prompt aren’t open at the same time.
 
-![](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.016.png)
+![](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.016.png)
 
-![](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.018.png)![](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.019.png)
+![](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.018.png)![](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.019.png)
 
 The easiest way to install Kafka is to download binaries and run it. Since it’s based on JVM languages like Scala and Java, you must make sure that you are using Java 7 or greater.
 
@@ -324,7 +324,7 @@ Step 4. Clone or Download the Python Code.
 - Clone or download the python codes from git hub repo
 - Unzip that file on desktop
 
-![](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.016.png)
+![](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.016.png)
 - ## Application Configuration Details:
 
 Clone or Download the Python Code.
@@ -332,7 +332,7 @@ Clone or Download the Python Code.
 - Clone or download the python codes from git hub repo
 - Unzip that file on desktop
 
-![](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.016.png)
+![](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.016.png)
 
 - Set Up Your Configuration in Configuration File:
 - Go to the file where all python codes are there.
@@ -402,35 +402,35 @@ Step 7. Implementation:
 - Then Open two command prompts and go into the python codes file using this command: **“cd C:\Users\Username\Desktop\\*python\_codes\_filename\*”**   then enter it.
 - Use this command in both cmd prompts.
 
-![](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.020.png)
+![](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.020.png)
 
 - Now kafka server is running. So, let’s run python codes in cmd.
 
-![](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.021.png)
+![](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.021.png)
 
 - In one cmd prompt, type “python SalesForceStreamCDC.py” to run the python file.
 - In second cmd prompt, type “python SalesForceConsumerCDC.py”.
 - In first code, we are pulling the changed data information from Salesforce and producing it from kafka. At the same time, we are dumping this data into MySql. how we will get the information we will look ahead.
 - In second code we are consuming the information in the kafka.
 
-![](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.021.png)
+![](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.021.png)
 
 - Now Go to salesforce Org and Change some data or add new User in the Users section. (Refer Third Step’s step 5)
 - Let’s add New User.
 
-![](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.022.png)
+![](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.022.png)
 
 - Type Users in Quick find box.
 - Click on Users and then Click on New User
 - Fill all the details and save it.
 
-![](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.021.png)
+![](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.021.png)
 
-![](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.021.png)
+![](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.021.png)
 
 - After adding a new user check your cmd prompt for the changed data information.
 
-![](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.021.png)
+![](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.021.png)
 
 - so, we have got the data here.
 - You can get all the information related to create, delete and update data of the salesforce Object.
@@ -441,7 +441,7 @@ Step 7. Implementation:
 - Just go to the cmd prompt and type “python Salesforce.py”.
 - You will get all the data from the object you have queried in configuration file.
 
-![](Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.021.png)
+![](references/Aspose.Words.be9bfa77-d374-4285-a501-ac90684d75a5.021.png)
 
 
 
